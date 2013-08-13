@@ -3,8 +3,12 @@ should = require('chai').should()
 describe 'Roman numerals', ->    
 
   roman = (numeral) -> 
-    digits = numeral.toUpperCase().split('')
-    digits.length
+    upperCaseNumeral = numeral.toUpperCase() 
+    digits = numeral.split('')
+    if upperCaseNumeral is 'V'
+      5
+    else
+      digits.length
     
   it 'should turn I into 1', ->
     roman('I').should.equal 1
@@ -24,6 +28,8 @@ describe 'Roman numerals', ->
   it 'should turn IIIIIIIIIII into 11', ->
     roman('IIIIIIIIIII').should.equal 11
 
+  it 'should turn V into 5', ->
+    roman('V').should.equal 5
 
-
-
+  it 'should turn v into 5', ->
+    roman('v').should.equal 5

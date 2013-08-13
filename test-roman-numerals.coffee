@@ -8,7 +8,10 @@ describe 'Roman numerals', ->
     if upperCaseNumeral is 'V'
       5
     else
-      digits.length
+      if upperCaseNumeral is 'IV'
+        4
+      else
+        digits.length
     
   tests = {
     'I': 1,
@@ -18,10 +21,15 @@ describe 'Roman numerals', ->
     'IIII': 4,
     'IIIIIIIIIII': 11,
     'V': 5,
-    'v': 5
+    'v': 5,
+    'IV': 4
   }
 
-  for input, expected of tests
-    it "should turn #{input} into #{expected}", ->
-      roman(input).should.equal expected
-      
+  doTest = (expected, actual) ->
+    it "should turn #{expected} into #{actual}", ->
+      roman(expected).should.equal actual
+
+  for key of tests 
+    doTest(key, tests[key])
+
+    

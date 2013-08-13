@@ -10,26 +10,18 @@ describe 'Roman numerals', ->
     else
       digits.length
     
-  it 'should turn I into 1', ->
-    roman('I').should.equal 1
+  tests = {
+    'I': 1,
+    'i': 1,
+    'II': 2,
+    'III': 3,
+    'IIII': 4,
+    'IIIIIIIIIII': 11,
+    'V': 5,
+    'v': 5
+  }
 
-  it 'should turn i into 1', -> # should not be case sensitive
-    roman('i').should.equal 1
-
-  it 'should turn II into 2', -> 
-    roman('II').should.equal 2
-
-  it 'should turn III into 3', ->
-    roman('III').should.equal 3
-
-  it 'should turn IIII into 4', ->
-    roman('IIII').should.equal 4
-
-  it 'should turn IIIIIIIIIII into 11', ->
-    roman('IIIIIIIIIII').should.equal 11
-
-  it 'should turn V into 5', ->
-    roman('V').should.equal 5
-
-  it 'should turn v into 5', ->
-    roman('v').should.equal 5
+  for input, expected of tests
+    it "should turn #{input} into #{expected}", ->
+      roman(input).should.equal expected
+      

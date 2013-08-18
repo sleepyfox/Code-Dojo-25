@@ -6,7 +6,7 @@ The tests can be run from the command-line with [mocha](http://visionmedia.githu
 	
 	mocha --compilers coffee:coffee-script -R spec test-*.coffee
 
-You can also use this with the **-w** flag to have mocha watch for file changes and re-run the tests.
+You can also use this with the **-w** flag to have mocha watch for file changes and re-run the tests (this obviates the need for watchr or similar tools).
 
 The slides from the meeting can be found [here](https://speakerdeck.com/sleepyfox/code-dojo-25). You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
 
